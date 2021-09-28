@@ -1,0 +1,26 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+bool isAmstrong(int n) {
+	int count = 0, temp = n, sum = 0;
+	while (temp != 0) {
+		count++;
+		temp /= 10;
+	}
+	temp = n;
+	while (temp != 0) {
+		sum += pow(temp % 10, count);
+		temp /= 10;
+	}
+	if (sum == n) return true;
+	return false;
+}
+int main() {
+	int n;
+	cout << "Enter n: ";
+	cin >> n;
+	if (isAmstrong(n)) cout << n << " la so Amstrong";
+	else cout << n << " khong phai so Amstrong";
+	return 0;
+}

@@ -1,0 +1,45 @@
+/*Cho 2 mảng a và b kiểm tra xem mảng a có phải là mảng con của b hay không*/
+
+#include<iostream>
+#define max 100
+using namespace std;
+
+void input(int* a, int n) {
+	for (int i = 0; i < n; i++) {
+		cout << "[" << i << "] = ";
+		cin >> a[i];
+	}
+}
+
+bool isSubArray(int* a, int* b, int n, int m) {
+	if (n > m) return false;
+	int start = 0, count = 0;
+	for (int i = 0; i < m; i++) {
+		if (b[i] == a[0]) {
+			start = i;
+			for (int j = 0; j < n; j++) {
+				if (a[j] != b[start++]) break;
+				else ++count;
+			}
+			if (count == n) return true;
+			else count = 0;
+		}
+	}
+	return false;
+}
+int main() {
+	int a[max], b[max], n = 0, m = 0;
+	cout << "Enter array A: ";
+	cin >> n;
+	input(a, n);
+	cout << "\nEnter array B: ";
+	cin >> m;
+	input(b, m);
+	if (isSubArray(a, b, n, m)) {
+		cout << "\nArray A is sub-array of B";
+	}
+	else cout << "Array A is not sub-array of B";
+	return 0;
+}
+
+

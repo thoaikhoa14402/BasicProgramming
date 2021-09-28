@@ -1,0 +1,49 @@
+#include<iostream>
+
+using namespace std;
+
+void input(int* a, int n) {
+	for (int i = 0; i < n; i++) {
+		cout << "a[" << i << "] = ";
+		cin >> a[i];
+	}
+}
+void output(int* a, int n) {
+	for (int i = 0; i < n; i++) {
+		cout << a[i] << " ";
+	}
+	cout << endl;
+}
+void ToHop(int *b, int *c,int n,int count, int j, int k) {
+	// liệt kê
+	if (count == k) output(c, count);
+	else
+	{
+		for (int i = j; i < n;) {
+			c[count] = b[i];
+			j = i + 1;
+			ToHop(b, c, n, count + 1, j, k);
+			i++;
+		}
+	}
+}
+void LietKeToHop(int *b, int *c, int m) {
+	for (int i = 1; i <= m; i++) {
+		ToHop(b, c, m, 0, 0, i);
+	}
+}
+int main() {
+	int a[100], b[100], c[100], n = 0, m = 0;
+	do {
+		cout << "Enter elements in array (n > 0): ";
+		cin >> n;
+	} while (n < 0);
+	cout << "The sub-array with positive elements: " << endl;
+	input(a, n);
+	for (int i = 0; i < n; i++) {
+		if (a[i] > 0) b[m++] = a[i];
+	}
+	if (m == 0) cout << "Array contains all negative numbers";
+	LietKeToHop(b, c, m);
+	return 0;
+}

@@ -1,0 +1,30 @@
+Câu 1) Ưu điểm của lập trình thủ tục hàm so với lập trình tuyến tính
+Tính tái sử dụng, không cần phải viết đi viết lại một khối lệnh mà bản chất nó như nhau
+Giúp code dễ đọc, dễ fix lỗi, debug dễ hơn
+
+Câu 2) Có 2 loại hàm
+Hàm có giá trị trả về: xử lý tính toán xong rồi trả về giá trị.
+hàm không có giá trị trả về: xử lý tính toán nhưng không muốn trả về giá trị
+
+Câu 3) Chức năng và nguyên lý hoạt động của return trong hàm có kiểu dữ liệu trả về
+Giá trị trả về - return. Thoát hàm và lấy giá trị trả về cho lời gọi hàm.
+
+Câu 4) Cách dùng lời gọi hàm của hàm có giá trị trả về
+Ví dụ:
+Gán cho biến: int giai_thua = factorial(n); // truyền n vào hàm factorial để tính giai thừa rồi gán cho biến giaithua
+In ra màn hình: cout << factorial(n); // cout giá trị trả về của hàm factorial 
+Tính toán biểu thức: factorial(n) * factorial(n + 1) + 2
+Tính toán biểu thức điều kiện (if isPrime(n) == true) cout << "n là số nguyên tố")
+với hàm isPrime là hàm kiểm tra số nguyên tố có kiểu dữ liệu là bool	
+
+Câu 5)
+Tham số hình thức: truyền ở định nghĩa hàm
+Tham số thực: truyền trong lời gọi hàm		
+
+Câu 6)
+Tham chiếu: là truyền địa chỉ vào với mục đích có thể thay đổi được giá trị khi lời gọi hàm kết thúc
+Tham trị: sử dụng khi không có nhu cầu thay đổi giá trị của biến đầu vào, nó tạo bản sao và chỉ làm việc trong hàm đó
+kết thúc hàm, tham số thực vẫn không bị thay đổi giá trị
+
+Câu 7)
+Hàm trong chương trình được thực thi khi có lời gọi nó và truyền đầy đủ tham số thực hợp lệ vào hàm

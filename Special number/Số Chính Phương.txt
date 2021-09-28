@@ -1,0 +1,19 @@
+#include<iostream>
+
+using namespace std;
+
+bool soChinhPhuong(int n) {
+	int num = sqrt(n);
+	if (num * num == n) {
+		return true;
+	}
+	else return false;
+}
+int main() {
+	int n;
+	cout << "Enter n: ";
+	cin >> n;
+	if (soChinhPhuong(n)) cout << n << " la so chinh phuong";
+	else cout << n << " khong phai so chinh phuong";
+	return 0;
+}
